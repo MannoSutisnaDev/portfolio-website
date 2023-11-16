@@ -1,0 +1,146 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+}
+
+.main-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.navigation-wrapper {
+  display: flex;
+  .navigation {
+    background: #974a2d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 80px;
+    flex-direction: column;
+    width: 210px;
+    flex: 1;
+    .profile-picture {
+      background: #83452f;
+      width: 165px;
+      height: 165px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+      }
+    }
+    .mobile-nav-icon {
+      display: none;
+    }
+    .mobile-nav-items {
+      display: none;
+    }
+  }
+}
+
+.nav-items {
+  ul {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    li {
+      a {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        text-transform: uppercase;
+        color: #b99888;
+        &:hover {
+          color: #e6dedd;
+        }
+        &.selected {
+          color: #e6dedd;
+        }
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.main-content {
+  flex: 1;
+  background: #181a1b;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.home {
+  color: white;
+  .personal {
+    font-family: "Saira Extra Condensed", serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    .name {
+      font-size: 6rem;
+      line-height: 5.5rem;
+      .first-name {
+        color: #c3beb6;
+      }
+      .last-name {
+        color: #cc7553;
+      }
+    }
+    .info-wrapper {
+      display: flex;
+      justify-content: flex-start;
+
+      .info {
+        color: #cc7553;
+        &:hover {
+          color: rgb(216, 150, 125);
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .intro {
+    color: #a19885;
+    margin-top: 30px;
+    line-height: 22px;
+  }
+  .socials {
+    margin-top: 30px;
+    ul {
+      display: flex;
+      column-gap: 10px;
+      li {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #b5afa6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          background: #ca7452;
+        }
+        svg {
+          width: 25px;
+          height: 25px;
+          path {
+            fill: #e8e6e3;
+          }
+        }
+      }
+    }
+  }
+}

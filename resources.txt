@@ -1,0 +1,66 @@
+CV voorbeeld:
+https://www.cvmaker.nl/cv-voorbeelden/software-developer
+
+
+https://turbofuture.com/computers/Nextjs-Portfolio-Template
+
+
+
+implement animations:
+
+https://www.awwwards.com/awwwards/collections/css-js-animations/
+
+- home
+
+- code snippets
+
+- blog posts 
+
+- projects
+
+- experience
+
+- about
+
+
+
+https://mailchimp.com/resources/web-developer-portfolio-examples/
+
+https://mxb.dev/notes/
+
+
+Fresh React Portfolio Website (Next.js App, Framer Motion, TypeScript, Tailwind CSS, Email) [inspiration]
+https://www.youtube.com/watch?v=sUKptmUVIBM
+
+
+
+switch animation:
+https://www.awwwards.com/inspiration/type-transformation-kinetic-type-animation
+
+
+mask effect:
+https://www.awwwards.com/inspiration/mask-effect
+
+
+each page has a different animation
+
+
+
+Home and about
+
+
+
+https://technext.github.io/resume-bootstrap4/
+
+
+Code front end 
+Swap colors
+Create home and about page
+Make beautfil transitions
+
+Page transition effects:
+https://speckyboy.com/page-transition-effects/
+
+
+
+
