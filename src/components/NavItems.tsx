@@ -1,4 +1,8 @@
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useContext } from "react";
+import { PageTransitionContext } from "@/components/PageTransitionWrapper";
 
 export type NavItemType = "regular" | "mobile";
 
@@ -7,9 +11,13 @@ export interface Props {
 }
 
 export default function NavItems({ type = "regular" }: Props) {
+  const pathname = usePathname();
+  const router = useRouter();
+  const { newPath, setNewPath, targetPageClosedRef } = useContext(
+    PageTransitionContext
+  );
   const className =
     type === "regular" ? "regular-nav-items" : "mobile-nav-items";
-  const pathname = usePathname();
   const items: {
     label: string;
     path: string;
@@ -29,12 +37,35 @@ export default function NavItems({ type = "regular" }: Props) {
         {items.map((item, index) => {
           return (
             <li key={`nav-${index}`}>
-              <a
+              <Link
                 className={`${item.path === pathname ? "selected" : ""}`}
+                onClick={async (e) => {
+                  e.preventDefault();
+                  console.log(item.path, newPath);
+                  if (item.path === newPath || targetPageClosedRef?.current) {
+                    return;
+                  }
+                  console.log("what???");
+                  await setNewPath(item.path);
+                  const targetPageClosed = new Promise<boolean>((resolve) => {
+                    if (!targetPageClosedRef) {
+                      resolve(false);
+                      return;
+                    }
+                    targetPageClosedRef.current = () => {
+                      resolve(true);
+                    };
+                  });
+                  const result = await targetPageClosed;
+                  if (!result) {
+                    return;
+                  }
+                  router.push(item.path);
+                }}
                 href={item.path}
               >
                 {item.label}
-              </a>
+              </Link>
             </li>
           );
         })}

@@ -1,3 +1,5 @@
+"use client";
+
 import HamburgerIcon from "@/icons/HamburgerIcon";
 import { RefObject, useContext, useEffect, useState } from "react";
 import { debounce } from "@/utils";
@@ -39,17 +41,18 @@ export default function MobileNavItems({ navigationWrapperRef }: Props) {
           onClick={() => setDisplayMenu((previousValue) => !previousValue)}
         />
       </div>
-      {createPortal(
-        <AnimatePresence mode="wait">
-          {displayMenu && (
-            <NavItemsWithAnimation
-              type="mobile"
-              top={navigationWrapperHeight}
-            />
-          )}
-        </AnimatePresence>,
-        mainWrapper ?? document.body
-      )}
+      {mainWrapper &&
+        createPortal(
+          <AnimatePresence mode="wait">
+            {displayMenu && (
+              <NavItemsWithAnimation
+                type="mobile"
+                top={navigationWrapperHeight}
+              />
+            )}
+          </AnimatePresence>,
+          mainWrapper
+        )}
     </>
   );
 }

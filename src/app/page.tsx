@@ -1,11 +1,16 @@
+"use client";
+
 import Github from "@/svgs/Github";
 import LinkedIn from "@/svgs/LinkedIn";
 
-import Image from "next/image";
+import { motion } from "framer-motion";
 
-export default function Home() {
+import HomePageAnimationWrapper from "@/animations/page-transitions/HomePageAnimation";
+import AnimatePresenceComponent from "@/animations/page-transitions/AnimatePresenceComponent";
+
+export function HomePage() {
   return (
-    <div className="home">
+    <motion.div className="home" initial={{ scaleY: 0 }}>
       <div className="personal">
         <h1 className="name">
           <span className="first-name">Manno</span>
@@ -39,6 +44,13 @@ export default function Home() {
           </li>
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 }
+
+const HomePageWithAnimation = AnimatePresenceComponent(
+  HomePageAnimationWrapper(HomePage),
+  (newPath) => newPath === "/"
+);
+
+export default HomePageWithAnimation;

@@ -1,7 +1,7 @@
 "use client";
 
-import myself from "../assets/myself.jpg";
 import Image from "next/image";
+import myself from "@/assets/myself.jpg";
 import MobileNavItems from "@/components/MobileNavItems";
 import NavItems from "@/components/NavItems";
 import { useRef } from "react";
