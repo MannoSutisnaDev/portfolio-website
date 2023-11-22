@@ -26,9 +26,13 @@ export default function MobileNavItems({ navigationWrapperRef }: Props) {
       }
     });
     registerNavigationWrapperHeight();
-    window.addEventListener("resize", registerNavigationWrapperHeight);
+    const onResize = () => {
+      setDisplayMenu(false);
+      registerNavigationWrapperHeight();
+    };
+    window.addEventListener("resize", onResize);
     return () => {
-      window.removeEventListener("resize", registerNavigationWrapperHeight);
+      window.removeEventListener("resize", onResize);
     };
   }, [navigationWrapperRef]);
 

@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Dispatch,
-  PropsWithChildren,
-  RefObject,
-  SetStateAction,
-  createContext,
-  useRef,
-  useState,
-} from "react";
+import { PropsWithChildren, RefObject, createContext, useRef } from "react";
 import NavBar from "@/components/NavBar";
 import PageTransitionWrapper from "@/components/PageTransitionWrapper";
 
