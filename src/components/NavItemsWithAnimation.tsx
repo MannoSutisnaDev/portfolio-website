@@ -15,11 +15,8 @@ export default function NavItemsWithAnimation(props: Props) {
       const enterAnimation = async () => {
         animate(
           scope.current,
-          { y: props.top },
-          {
-            duration: 0.2,
-            ease: "linear",
-          }
+          { top: props.top, ease: "easeIn" },
+          { duration: 0.3 }
         );
       };
       enterAnimation();
@@ -27,11 +24,8 @@ export default function NavItemsWithAnimation(props: Props) {
       const exitAnimation = async () => {
         await animate(
           scope.current,
-          { y: 0 },
-          {
-            duration: 0.2,
-            ease: "linear",
-          }
+          { top: -1000, ease: "easeOut" },
+          { duration: 0.3 }
         );
         safeToRemove();
       };

@@ -4,12 +4,18 @@
     flex-direction: column;
   }
 
+  .navigation-wrapper {
+    z-index: 100001;
+  }
+
   .nav-items-wrapper {
     position: absolute;
     background: #974a2d;
     width: 100%;
+    z-index: 100000;
+
     .mobile-nav-items {
-      top: 0;
+      top: -1000px;
       left: 0;
       display: block;
       width: 100%;

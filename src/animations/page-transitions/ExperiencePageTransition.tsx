@@ -1,18 +1,17 @@
 import { PageTransitionContext } from "@/components/PageTransitionWrapper";
-import { motion, useAnimate, usePresence } from "framer-motion";
+import { useAnimate, usePresence } from "framer-motion";
 import { useContext, useEffect, useRef } from "react";
 import { ExtensionFunctionsProps } from "@/animations/page-transitions/AnimatePresenceComponent";
-
 import { PageBackgroundMapping } from "@/constants";
+import { motion } from "framer-motion";
 import { PageKeys } from "@/types";
 import { MainWrapperContext } from "@/components/MainWrapper";
+import { verticalSplitPageTransition } from "@/animations/page-transitions/utils";
 
-import { diagonalClosePageTransition } from "@/animations/page-transitions/utils";
-
-export default function ExperiencePageAnimationWrapper<
+export default function HomePageAnimationWrapper<
   P extends ExtensionFunctionsProps
 >(ComponentToWrap: React.ComponentType<P>) {
-  const ExperiencePageAnimation = (props: P) => {
+  const HomePageAnimation = (props: P) => {
     const { mainContentRef } = useContext(MainWrapperContext);
     const { targetPageClosedRef, newPath } = useContext(PageTransitionContext);
     const [isPresent, safeToRemove] = usePresence();
@@ -21,11 +20,22 @@ export default function ExperiencePageAnimationWrapper<
     const newPageRef = useRef<HTMLDivElement>(null);
     const transitionElementRef = useRef<HTMLDivElement>(null);
     const transitionElement2Ref = useRef<HTMLDivElement>(null);
+    const initAnimationRef = useRef<boolean>(false);
+
+    useEffect(() => {
+      return () => {
+        initAnimationRef.current = false;
+      };
+    });
+
     useEffect(() => {
       if (isPresent) {
+        initAnimationRef.current = true;
         const enterAnimation = async () => {
-          await animate(".experience", { x: 0 }, { duration: 0.5 });
-          props.setDisplayScrollBars(true);
+          await animate(".home", { scaleY: 1 }, { duration: 0.5 });
+          if (initAnimationRef.current) {
+            props.setDisplayScrollBars(true);
+          }
         };
         enterAnimation();
       } else {
@@ -38,7 +48,7 @@ export default function ExperiencePageAnimationWrapper<
           (mainContentRef?.current as HTMLElement).style.background =
             newPageBackgroundColor;
 
-          await diagonalClosePageTransition(
+          await verticalSplitPageTransition(
             mainPageRef.current as HTMLElement,
             newPageRef.current as HTMLElement,
             transitionElementRef.current as HTMLElement,
@@ -81,5 +91,5 @@ export default function ExperiencePageAnimationWrapper<
       </div>
     );
   };
-  return ExperiencePageAnimation;
+  return HomePageAnimation;
 }

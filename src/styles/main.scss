@@ -44,6 +44,11 @@ body {
       background: $home-page-background-color;
     }
   }
+  &.skills-page {
+    .page-transition-wrapper {
+      background: $skills-page-background-color;
+    }
+  }
   &.experience-page {
     .page-transition-wrapper {
       background: $experience-page-background-color;

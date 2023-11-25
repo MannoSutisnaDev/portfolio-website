@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { PageTransitionContext } from "@/components/PageTransitionWrapper";
+import { NavBarContext } from "@/components/NavBar";
 
 export type NavItemType = "regular" | "mobile";
 
@@ -16,6 +17,7 @@ export default function NavItems({ type = "regular" }: Props) {
   const { newPath, setNewPath, targetPageClosedRef } = useContext(
     PageTransitionContext
   );
+  const { setDisplayMenu } = useContext(NavBarContext);
   const className =
     type === "regular" ? "regular-nav-items" : "mobile-nav-items";
   const items: {
@@ -27,8 +29,24 @@ export default function NavItems({ type = "regular" }: Props) {
       path: "/",
     },
     {
+      label: "Skills",
+      path: "/skills",
+    },
+    {
       label: "Experience",
       path: "/experience",
+    },
+    {
+      label: "Education",
+      path: "/education",
+    },
+    {
+      label: "Projects",
+      path: "/projects",
+    },
+    {
+      label: "About me",
+      path: "/about",
     },
   ];
   return (
@@ -44,13 +62,21 @@ export default function NavItems({ type = "regular" }: Props) {
                   if (item.path === newPath || targetPageClosedRef?.current) {
                     return;
                   }
+                  setDisplayMenu(false);
                   const targetPageClosed = new Promise<boolean>((resolve) => {
                     if (!targetPageClosedRef) {
                       resolve(false);
                       return;
                     }
+                    const timeout = setTimeout(() => {
+                      resolve(false);
+                      if (targetPageClosedRef) {
+                        targetPageClosedRef.current = null;
+                      }
+                    }, 2000);
                     targetPageClosedRef.current = () => {
                       resolve(true);
+                      clearTimeout(timeout);
                     };
                   });
                   await setNewPath(item.path);

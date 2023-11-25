@@ -1,36 +1,36 @@
 "use client";
 
 import AnimatePresenceComponent from "@/animations/page-transitions/AnimatePresenceComponent";
-import ExperiencePageAnimationWrapper from "@/animations/page-transitions/ExperiencePageTransition";
+import SkillsPageAnimationWrapper from "@/animations/page-transitions/SkillsPageTransition";
 import { PageTransitionContext } from "@/components/PageTransitionWrapper";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useContext } from "react";
 
-function Experience() {
+function Skills() {
   return (
-    <motion.div className="home experience">
+    <motion.div className="home skills" initial={{ x: 1000 }}>
       <div className="personal">
         <h1 className="name">
-          <span className="first-name">EXPERIENCE</span>
+          <span className="first-name">SKILLS</span>
         </h1>
       </div>
     </motion.div>
   );
 }
 
-const ExperiencePageWithAnimation = AnimatePresenceComponent(
-  ExperiencePageAnimationWrapper(Experience),
+const SkillsPageWithAnimation = AnimatePresenceComponent(
+  SkillsPageAnimationWrapper(Skills),
   () => {
     const { targetPageClosedRef, newPath } = useContext(PageTransitionContext);
     const pathname = usePathname();
     if (typeof window === "undefined") {
       return true;
     } else if (pathname && !targetPageClosedRef?.current) {
-      return pathname === "/experience";
+      return pathname === "/skills";
     }
-    return newPath === "/experience";
+    return newPath === "/skills";
   }
 );
 
-export default ExperiencePageWithAnimation;
+export default SkillsPageWithAnimation;

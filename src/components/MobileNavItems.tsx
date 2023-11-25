@@ -7,13 +7,14 @@ import { AnimatePresence } from "framer-motion";
 import NavItemsWithAnimation from "@/components/NavItemsWithAnimation";
 import { createPortal } from "react-dom";
 import { MainWrapperContext } from "@/components/MainWrapper";
+import { NavBarContext } from "@/components/NavBar";
 
 interface Props {
   navigationWrapperRef: RefObject<HTMLDivElement>;
 }
 
 export default function MobileNavItems({ navigationWrapperRef }: Props) {
-  const [displayMenu, setDisplayMenu] = useState(false);
+  const { displayMenu, setDisplayMenu } = useContext(NavBarContext);
   const [navigationWrapperHeight, setNavigationWrapperHeight] = useState(0);
   const { mainWrapperRef } = useContext(MainWrapperContext);
 
@@ -34,7 +35,7 @@ export default function MobileNavItems({ navigationWrapperRef }: Props) {
     return () => {
       window.removeEventListener("resize", onResize);
     };
-  }, [navigationWrapperRef]);
+  }, [navigationWrapperRef, setDisplayMenu]);
 
   const mainWrapper = mainWrapperRef?.current;
 

@@ -23,7 +23,7 @@
       }
     }
   }
-  &.experience-page {
+  &.skills-page {
     .transition-piece {
       transform: scale(0) rotate(45deg);
       &.piece-1 {
@@ -33,6 +33,34 @@
       &.piece-2 {
         bottom: -100px;
         left: -100px;
+      }
+    }
+  }
+  &.experience-page {
+    .transition-piece {
+      transform: scaleX(0);
+      &.piece-1 {
+        left: -100px;
+        height: 100%;
+      }
+      &.piece-2 {
+        right: -100px;
+        height: 100%;
+      }
+    }
+  }
+  &.education-page {
+    .transition-piece {
+      transform: scaleY(0);
+      // transform: scale(1);
+      // background: black;
+      &.piece-1 {
+        top: -100px;
+        width: 100%;
+      }
+      &.piece-2 {
+        bottom: -100px;
+        width: 100%;
       }
     }
   }
