@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { PageTransitionContext } from "@/components/PageTransitionWrapper";
 import { NavBarContext } from "@/components/NavBar";
+import { PageKeys } from "@/types";
 
 export type NavItemType = "regular" | "mobile";
 
@@ -46,7 +47,7 @@ export default function NavItems({ type = "regular" }: Props) {
     },
     {
       label: "About me",
-      path: "/about",
+      path: "/about-me",
     },
   ];
   return (
@@ -59,6 +60,11 @@ export default function NavItems({ type = "regular" }: Props) {
                 className={`${item.path === pathname ? "selected" : ""}`}
                 onClick={async (e) => {
                   e.preventDefault();
+                  const pageKeys = Object.values(PageKeys);
+                  if (!pageKeys.includes(pathname as PageKeys)) {
+                    router.push(item.path);
+                    return;
+                  }
                   if (item.path === newPath || targetPageClosedRef?.current) {
                     return;
                   }

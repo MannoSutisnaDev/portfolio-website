@@ -1,36 +1,36 @@
 "use client";
 
 import AnimatePresenceComponent from "@/animations/page-transitions/AnimatePresenceComponent";
-import ProjectsPageAnimationWrapper from "@/animations/page-transitions/ProjectsPageTransition";
+import AboutMePageAnimationWrapper from "@/animations/page-transitions/AboutMePageTransition";
 import { PageTransitionContext } from "@/components/PageTransitionWrapper";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useContext } from "react";
 
-function Projects() {
+function AboutMe() {
   return (
-    <motion.div className="home projects">
+    <motion.div className="home about-me">
       <div className="personal">
         <h1 className="name">
-          <span className="first-name">Projects</span>
+          <span className="first-name">About Me</span>
         </h1>
       </div>
     </motion.div>
   );
 }
 
-const ProjectsPageWithAnimation = AnimatePresenceComponent(
-  ProjectsPageAnimationWrapper(Projects),
+const AboutMePageWithAnimation = AnimatePresenceComponent(
+  AboutMePageAnimationWrapper(AboutMe),
   () => {
     const { targetPageClosedRef, newPath } = useContext(PageTransitionContext);
     const pathname = usePathname();
     if (typeof window === "undefined") {
       return true;
     } else if (pathname && !targetPageClosedRef?.current) {
-      return pathname === "/projects";
+      return pathname === "/about-me";
     }
-    return newPath === "/projects";
+    return newPath === "/about-me";
   }
 );
 
-export default ProjectsPageWithAnimation;
+export default AboutMePageWithAnimation;

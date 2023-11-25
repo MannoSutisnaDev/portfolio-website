@@ -132,3 +132,74 @@ export const horizontalSplitPageTransition = async (
     }
   );
 };
+
+export const diamondFigurePageTransition = async (
+  currentPageElement: HTMLElement,
+  newPageElement: HTMLElement,
+  transitionElement: HTMLElement
+) => {
+  await basePageTransition(
+    currentPageElement,
+    newPageElement,
+    (duration: number, scale: number) => {
+      const animationSteps = [
+        {
+          transform: "translate(-50%, -50%) rotate(45deg) scale(0)",
+          easing: "ease",
+        },
+        {
+          transform: `translate(-50%, -50%) rotate(45deg) scale(${scale})`,
+          easing: "ease",
+        },
+        {
+          transform: "translate(-50%, -50%) rotate(45deg) scale(0)",
+          easing: "ease",
+        },
+      ];
+
+      const animationOptions = {
+        duration,
+      };
+
+      return [
+        transitionElement.animate(animationSteps, animationOptions).finished,
+      ];
+    }
+  );
+};
+
+export const horizontalSwipePageTransition = async (
+  currentPageElement: HTMLElement,
+  newPageElement: HTMLElement,
+  transitionElement: HTMLElement,
+  direction: "left" | "right"
+) => {
+  await basePageTransition(
+    currentPageElement,
+    newPageElement,
+    (duration: number, scale: number) => {
+      const animationSteps = [
+        {
+          transform: "scaleX(0)",
+          easing: "ease",
+        },
+        {
+          transform: `scaleX(${direction === "left" ? "-" : ""}${scale})`,
+          easing: "ease",
+        },
+        {
+          transform: "scaleX(0)",
+          easing: "ease",
+        },
+      ];
+
+      const animationOptions = {
+        duration,
+      };
+
+      return [
+        transitionElement.animate(animationSteps, animationOptions).finished,
+      ];
+    }
+  );
+};

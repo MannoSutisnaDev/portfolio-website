@@ -52,8 +52,6 @@
   &.education-page {
     .transition-piece {
       transform: scaleY(0);
-      // transform: scale(1);
-      // background: black;
       &.piece-1 {
         top: -100px;
         width: 100%;
@@ -61,6 +59,26 @@
       &.piece-2 {
         bottom: -100px;
         width: 100%;
+      }
+    }
+  }
+  &.projects-page {
+    .transition-piece {
+      &.piece-1 {
+        height: 100%;
+        left: -200px;
+        transform-origin: 0px 200px;
+        transform: scaleX(0);
+      }
+    }
+  }
+  &.about-me-page {
+    .transition-piece {
+      &.piece-1 {
+        height: 100%;
+        right: -200px;
+        transform-origin: 0px 200px;
+        transform: scaleX(0);
       }
     }
   }

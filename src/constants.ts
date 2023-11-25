@@ -5,6 +5,7 @@ export const PageBackgroundMapping: Record<PageKeys, string> = {
   [PageKeys.Home]: variables.homePageBackground,
   [PageKeys.Experience]: variables.experiencePageBackground,
   [PageKeys.Education]: variables.educationPageBackground,
-  [PageKeys.Interests]: variables.interestsPageBackground,
+  [PageKeys.Projects]: variables.projectsPageBackground,
   [PageKeys.Skills]: variables.skillsPageBackground,
+  [PageKeys.AbountMe]: variables.aboutMeBackground,
 };

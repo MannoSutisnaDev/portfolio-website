@@ -2,6 +2,7 @@ export enum PageKeys {
   Home = "/",
   Experience = "/experience",
   Education = "/education",
-  Interests = "/interests",
+  Projects = "/projects",
   Skills = "/skills",
+  AbountMe = "/about-me",
 }

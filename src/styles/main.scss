@@ -54,6 +54,21 @@ body {
       background: $experience-page-background-color;
     }
   }
+  &.education-page {
+    .page-transition-wrapper {
+      background: $education-page-background-color;
+    }
+  }
+  &.projects-page {
+    .page-transition-wrapper {
+      background: $projects-page-background-color;
+    }
+  }
+  &.about-me-page {
+    .page-transition-wrapper {
+      background: $about-me-page-background-color;
+    }
+  }
 }
 
 .navigation-wrapper {
