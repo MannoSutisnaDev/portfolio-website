@@ -1,0 +1,79 @@
+@import "./variables.module.scss";
+
+.transition-piece {
+  width: 200px;
+  height: 200px;
+  background: $main-background-color;
+  position: absolute;
+  transform: scale(0);
+  z-index: 1001;
+}
+
+.transition-wrapper {
+  &.home-page {
+    .transition-piece {
+      transform: scale(0) rotate(45deg);
+      &.piece-1 {
+        left: -100px;
+        top: -100px;
+      }
+      &.piece-2 {
+        bottom: -100px;
+        right: -100px;
+      }
+    }
+  }
+  &.experience-page {
+    .transition-piece {
+      transform: scale(0) rotate(45deg);
+      &.piece-1 {
+        right: -100px;
+        top: -100px;
+      }
+      &.piece-2 {
+        bottom: -100px;
+        left: -100px;
+      }
+    }
+  }
+}
+
+.page-transition-wrapper {
+  &.visible {
+    display: flex;
+  }
+  display: none;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-page {
+  &.visible {
+    display: flex;
+  }
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  transform-origin: 0px 0px;
+}
+
+@keyframes diamond {
+  0% {
+    transform: rotate(45deg) scale(0);
+  }
+  50% {
+    transform: rotate(45deg) scale(10);
+  }
+  100% {
+    transform: rotate(45deg) scale(0);
+  }
+}

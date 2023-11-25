@@ -1,0 +1,14 @@
+$home-page-background-color: #19323c;
+$experience-page-background-color: #3f4142;
+$education-page-background-color: #2a2d2e;
+$interests-page-background-color: #33383e;
+$skills-page-background-color: #222425;
+$main-background-color: #181a1b;
+
+:export {
+  homePageBackground: $home-page-background-color;
+  experiencePageBackground: $experience-page-background-color;
+  educationPageBackground: $education-page-background-color;
+  interestsPageBackground: $interests-page-background-color;
+  skillsPageBackground: $skills-page-background-color;
+}

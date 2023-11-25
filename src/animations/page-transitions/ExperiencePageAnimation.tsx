@@ -1,55 +1,83 @@
 import { PageTransitionContext } from "@/components/PageTransitionWrapper";
-import { useAnimate, usePresence } from "framer-motion";
-import { useContext, useEffect } from "react";
+import { motion, useAnimate, usePresence } from "framer-motion";
+import { useContext, useEffect, useRef } from "react";
 import { ExtensionFunctionsProps } from "@/animations/page-transitions/AnimatePresenceComponent";
+
+import { PageBackgroundMapping } from "@/constants";
+import { PageKeys } from "@/types";
+import { MainWrapperContext } from "@/components/MainWrapper";
+
+import { diagonalClosePageTransition } from "@/animations/page-transitions/utils";
 
 export default function ExperiencePageAnimationWrapper<
   P extends ExtensionFunctionsProps
 >(ComponentToWrap: React.ComponentType<P>) {
   const ExperiencePageAnimation = (props: P) => {
-    const { targetPageClosedRef } = useContext(PageTransitionContext);
+    const { mainContentRef } = useContext(MainWrapperContext);
+    const { targetPageClosedRef, newPath } = useContext(PageTransitionContext);
     const [isPresent, safeToRemove] = usePresence();
     const [scope, animate] = useAnimate();
+    const mainPageRef = useRef<HTMLDivElement>(null);
+    const newPageRef = useRef<HTMLDivElement>(null);
+    const transitionElementRef = useRef<HTMLDivElement>(null);
+    const transitionElement2Ref = useRef<HTMLDivElement>(null);
     useEffect(() => {
       if (isPresent) {
         const enterAnimation = async () => {
-          await animate(
-            ".home",
-            {
-              x: 0,
-            },
-            {
-              duration: 0.5,
-            }
-          );
+          await animate(".experience", { x: 0 }, { duration: 0.5 });
           props.setDisplayScrollBars(true);
         };
         enterAnimation();
       } else {
         const exitAnimation = async () => {
           props.setDisplayScrollBars(false);
-          await animate(
-            ".home",
-            {
-              x: 1000,
-            },
-            {
-              duration: 0.5,
-            }
+          const newPageBackgroundColor =
+            PageBackgroundMapping[newPath as PageKeys];
+          (newPageRef.current as HTMLElement).style.background =
+            newPageBackgroundColor;
+          (mainContentRef?.current as HTMLElement).style.background =
+            newPageBackgroundColor;
+
+          await diagonalClosePageTransition(
+            mainPageRef.current as HTMLElement,
+            newPageRef.current as HTMLElement,
+            transitionElementRef.current as HTMLElement,
+            transitionElement2Ref.current as HTMLElement
           );
-          safeToRemove();
+
           if (targetPageClosedRef?.current) {
             targetPageClosedRef.current();
             targetPageClosedRef.current = null;
           }
+          safeToRemove();
         };
         exitAnimation();
       }
-    }, [animate, isPresent, props, safeToRemove, scope, targetPageClosedRef]);
+    }, [
+      animate,
+      isPresent,
+      mainContentRef,
+      newPath,
+      props,
+      safeToRemove,
+      scope,
+      targetPageClosedRef,
+    ]);
 
     return (
-      <div className="page-transition-wrapper" ref={scope}>
-        <ComponentToWrap {...props} />
+      <div ref={scope} className="transition-wrapper experience-page">
+        <motion.div
+          ref={transitionElementRef}
+          className="transition-piece piece-1"
+        />
+        <motion.div
+          ref={transitionElement2Ref}
+          className="transition-piece piece-2"
+        />
+        <motion.div ref={newPageRef} className="new-page" />
+        <div ref={mainPageRef} className="page-transition-wrapper visible">
+          <ComponentToWrap {...props} />
+        </div>
       </div>
     );
   };

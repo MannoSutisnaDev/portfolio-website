@@ -41,12 +41,9 @@ export default function NavItems({ type = "regular" }: Props) {
                 className={`${item.path === pathname ? "selected" : ""}`}
                 onClick={async (e) => {
                   e.preventDefault();
-                  console.log(item.path, newPath);
                   if (item.path === newPath || targetPageClosedRef?.current) {
                     return;
                   }
-                  console.log("what???");
-                  await setNewPath(item.path);
                   const targetPageClosed = new Promise<boolean>((resolve) => {
                     if (!targetPageClosedRef) {
                       resolve(false);
@@ -56,6 +53,7 @@ export default function NavItems({ type = "regular" }: Props) {
                       resolve(true);
                     };
                   });
+                  await setNewPath(item.path);
                   const result = await targetPageClosed;
                   if (!result) {
                     return;

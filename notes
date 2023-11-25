@@ -21,3 +21,69 @@ https://dev.to/jameswallis/animating-next-js-page-transitions-with-framer-motion
 
 Page transitions with GSAP:
 https://plainenglish.io/blog/advanced-page-transitions-in-next-js-with-router-events-and-gsap-e8435d2410bb
+
+ANIMATIONS TO IMPLEMENT
+
+Go to detail page animation:
+https://www.sliderrevolution.com/resources/css-page-transitions/ (Expanding card page transition effect – Rachel Smith)
+
+Another go to detail page animation:
+https://www.sliderrevolution.com/resources/css-page-transitions/ (Thumbnail to Fullscreen Page Transition – Steve Gardner)
+
+Page reveal effect:
+https://www.sliderrevolution.com/resources/css-page-transitions/ (Dummy Multi-Layer Page Reveal Effect – Mehmet Burak Erman)
+
+Another page reveal effect:
+https://www.sliderrevolution.com/resources/css-page-transitions/ (CSS Page Transition – Curtain – Kyle Brumm)
+
+Page transition special shape 1:
+https://www.sliderrevolution.com/resources/css-page-transitions/ (Responsive bodymovin modal/page transition – Jonas Sandstedt)
+
+Page transition swap:
+https://www.sliderrevolution.com/resources/css-page-transitions/ (Kontext – Hakim El Hattab)
+
+Page transition loader:
+https://www.sliderrevolution.com/resources/css-page-transitions/ (Page Transition Loader – Arsen Zbidniakov)
+
+Tiles page transition:
+https://www.sliderrevolution.com/resources/css-page-transitions/ (Tiles Page Transition (CSS) – Álvaro)
+
+Multiple transitions:
+https://codepen.io/jcoulterdesign/pen/EPNrzg
+
+Matching colors for main content:
+https://www.sessions.edu/color-calculator/ (#974a2d)
+
+Complementing background colors (#181A1B)
+https://mycolor.space/?hex=%23181A1B&sub=1
+
+- #19323c
+
+- #3f4142
+
+- #2a2d2e
+
+- #33383e
+
+- #222425
+
+20 page transitions:
+https://freefrontend.com/css-page-transitions/
+
+35 page transitions:
+https://devsnap.me/css-page-transitions
+
+19 page transitions:
+https://alvarotrigo.com/blog/css-page-transitions/
+
+Using CSS variables in React:
+https://veerasundar.com/blog/setting-css-variables-from-react/
+
+Build React components like LEGO's
+https://blog.bitsrc.io/how-to-use-sass-and-css-modules-with-create-react-app-83fa8b805e5e
+
+Reveal animations:
+https://blog.logrocket.com/guide-to-css-animation-for-javascript-developers/
+
+Javascript use OFFSET to manipulate keyframe animation points:
+https://stackoverflow.com/questions/64271754/javascript-animate-key-frames-by-percentage

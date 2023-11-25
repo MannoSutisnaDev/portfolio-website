@@ -2,11 +2,14 @@
 
 import AnimatePresenceComponent from "@/animations/page-transitions/AnimatePresenceComponent";
 import ExperiencePageAnimationWrapper from "@/animations/page-transitions/ExperiencePageAnimation";
+import { PageTransitionContext } from "@/components/PageTransitionWrapper";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { useContext } from "react";
 
 function Experience() {
   return (
-    <motion.div className="home" initial={{ x: 1000 }}>
+    <motion.div className="home experience" initial={{ x: 1000 }}>
       <div className="personal">
         <h1 className="name">
           <span className="first-name">WTF</span>
@@ -32,7 +35,16 @@ function Experience() {
 
 const ExperiencePageWithAnimation = AnimatePresenceComponent(
   ExperiencePageAnimationWrapper(Experience),
-  (newPath) => newPath === "/experience"
+  () => {
+    const { targetPageClosedRef, newPath } = useContext(PageTransitionContext);
+    const pathname = usePathname();
+    if (typeof window === "undefined") {
+      return true;
+    } else if (pathname && !targetPageClosedRef?.current) {
+      return pathname === "/experience";
+    }
+    return newPath === "/experience";
+  }
 );
 
 export default ExperiencePageWithAnimation;

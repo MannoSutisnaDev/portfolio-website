@@ -3,6 +3,7 @@ import "@/styles/reset.scss";
 import "@/styles/fonts.scss";
 import "@/styles/main.scss";
 import "@/styles/main-mobile.scss";
+import "@/styles/transitions.scss";
 
 import MainWrapper from "@/components/MainWrapper";
 

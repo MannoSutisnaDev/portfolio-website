@@ -1,5 +1,4 @@
 import { MainWrapperContext } from "@/components/MainWrapper";
-import { PageTransitionContext } from "@/components/PageTransitionWrapper";
 import { AnimatePresence } from "framer-motion";
 import { useContext } from "react";
 
@@ -9,14 +8,13 @@ export interface ExtensionFunctionsProps {
 
 export default function AnimatePresenceComponent<P extends {}>(
   ComponentToWrap: React.ComponentType<P & ExtensionFunctionsProps>,
-  viewCondition: (currentNewPath: string) => {}
+  viewCondition: () => boolean
 ) {
   const AnimatePresenceComponentWrapper = (props: P) => {
-    const { newPath } = useContext(PageTransitionContext);
     const { mainContentRef } = useContext(MainWrapperContext);
     return (
       <AnimatePresence mode="wait">
-        {viewCondition(newPath) && (
+        {viewCondition() && (
           <ComponentToWrap
             {...props}
             setDisplayScrollBars={(display: boolean) => {

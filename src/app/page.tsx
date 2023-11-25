@@ -7,6 +7,9 @@ import { motion } from "framer-motion";
 
 import HomePageAnimationWrapper from "@/animations/page-transitions/HomePageAnimation";
 import AnimatePresenceComponent from "@/animations/page-transitions/AnimatePresenceComponent";
+import { useContext } from "react";
+import { PageTransitionContext } from "@/components/PageTransitionWrapper";
+import { usePathname } from "next/navigation";
 
 export function HomePage() {
   return (
@@ -50,7 +53,16 @@ export function HomePage() {
 
 const HomePageWithAnimation = AnimatePresenceComponent(
   HomePageAnimationWrapper(HomePage),
-  (newPath) => newPath === "/"
+  () => {
+    const { targetPageClosedRef, newPath } = useContext(PageTransitionContext);
+    const pathname = usePathname();
+    if (typeof window === "undefined") {
+      return true;
+    } else if (pathname && !targetPageClosedRef?.current) {
+      return pathname === "/";
+    }
+    return newPath === "/";
+  }
 );
 
 export default HomePageWithAnimation;
