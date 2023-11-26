@@ -30,12 +30,12 @@ export default function NavItems({ type = "regular" }: Props) {
       path: "/",
     },
     {
-      label: "Skills",
-      path: "/skills",
-    },
-    {
       label: "Experience",
       path: "/experience",
+    },
+    {
+      label: "Skills",
+      path: "/skills",
     },
     {
       label: "Education",
@@ -44,10 +44,6 @@ export default function NavItems({ type = "regular" }: Props) {
     {
       label: "Projects",
       path: "/projects",
-    },
-    {
-      label: "About me",
-      path: "/about-me",
     },
   ];
   return (

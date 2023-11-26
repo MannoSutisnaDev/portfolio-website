@@ -2,19 +2,24 @@
 
 import AnimatePresenceComponent from "@/animations/page-transitions/AnimatePresenceComponent";
 import ProjectsPageAnimationWrapper from "@/animations/page-transitions/ProjectsPageTransition";
+import ContentBlock from "@/components/ContentBlock";
 import { PageTransitionContext } from "@/components/PageTransitionWrapper";
+import { ContentBlockType } from "@/types";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useContext } from "react";
 
 function Projects() {
+  const contentBlock: ContentBlockType = {
+    main: "Coming soon...",
+    after: "",
+    sub: "",
+    content: "",
+  };
   return (
-    <motion.div className="home projects">
-      <div className="personal">
-        <h1 className="name">
-          <span className="first-name">Projects</span>
-        </h1>
-      </div>
+    <motion.div className="base-page projects">
+      <h1 className="heading">Projects</h1>
+      <ContentBlock {...contentBlock} />
     </motion.div>
   );
 }

@@ -7,10 +7,7 @@ import { PageBackgroundMapping } from "@/constants";
 import { PageKeys } from "@/types";
 import { MainWrapperContext } from "@/components/MainWrapper";
 
-import {
-  diamondFigurePageTransition,
-  horizontalSwipePageTransition,
-} from "@/animations/page-transitions/utils";
+import { horizontalSwipePageTransition } from "@/animations/page-transitions/utils";
 
 export default function ProjectsPageAnimationWrapper<
   P extends ExtensionFunctionsProps

@@ -6,3 +6,10 @@ export enum PageKeys {
   Skills = "/skills",
   AbountMe = "/about-me",
 }
+
+export interface ContentBlockType {
+  main: string;
+  after: string;
+  sub: string;
+  content: string;
+}

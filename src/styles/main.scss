@@ -1,5 +1,8 @@
 @import "./variables.module.scss";
 
+$main-color-text: #c3beb6;
+$sub-color-text: rgb(161, 152, 140);
+
 body {
   width: 100vw;
   height: 100vh;
@@ -80,7 +83,6 @@ body {
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 80px;
     flex-direction: column;
     width: 210px;
     flex: 1;
@@ -109,7 +111,7 @@ body {
 
 .nav-items {
   ul {
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -120,6 +122,7 @@ body {
         cursor: pointer;
         text-transform: uppercase;
         color: #b99888;
+        font-weight: 700;
         &:hover {
           color: #e6dedd;
         }
@@ -147,7 +150,6 @@ body {
 
 .home {
   color: white;
-  padding: 0 40px;
   .personal {
     font-family: "Saira Extra Condensed", serif;
     font-weight: 700;
@@ -208,4 +210,145 @@ body {
       }
     }
   }
+}
+
+.base-page {
+  padding: 0 40px;
+  .heading {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 52px;
+    line-height: 48px;
+    color: $main-color-text;
+    font-family: "Saira Extra Condensed", serif;
+  }
+  .section {
+    margin-top: 50px;
+    width: 100%;
+    .top {
+      .main {
+        display: flex;
+        justify-content: space-between;
+        .title {
+          font-weight: 700;
+          text-transform: uppercase;
+          font-family: "Saira Extra Condensed", serif;
+          color: $main-color-text;
+          font-size: 28px;
+          line-height: 26px;
+        }
+        .after {
+          color: rgb(204, 117, 83);
+        }
+      }
+      .sub {
+        margin-top: 10px;
+        font-family: "Saira Extra Condensed", serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $sub-color-text;
+        font-size: 20px;
+        line-height: 18px;
+      }
+    }
+    .content {
+      margin-top: 20px;
+      color: $sub-color-text;
+      max-width: 1050px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}
+
+.experience,
+.education {
+  width: 100%;
+}
+
+.skills-list {
+  margin-top: 50px;
+  h2 {
+    font-family: "Saira Extra Condensed", serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $sub-color-text;
+    font-size: 20px;
+    line-height: 18px;
+  }
+  .icons {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+    max-width: 1000px;
+    svg {
+      width: 50px;
+      height: 50px;
+      path {
+        fill: $sub-color-text;
+      }
+    }
+  }
+}
+
+.tooltip-wrapper {
+  position: relative;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltiptext {
+  visibility: visible;
+  background-color: #555;
+  white-space: pre-line;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }
