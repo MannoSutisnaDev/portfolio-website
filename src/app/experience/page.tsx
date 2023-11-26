@@ -28,7 +28,7 @@ function Experience() {
   ];
 
   return (
-    <motion.div className="base-page experience">
+    <motion.div className="base-page experience" initial={{ scaleY: 0 }}>
       <h1 className="heading">Experience</h1>
       {contentBlocks.map((entry, index) => {
         return <ContentBlock key={`content-block-${index}`} {...entry} />;

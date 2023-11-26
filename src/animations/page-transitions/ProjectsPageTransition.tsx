@@ -32,6 +32,7 @@ export default function ProjectsPageAnimationWrapper<
       if (isPresent) {
         initAnimationRef.current = true;
         const enterAnimation = async () => {
+          await animate(".projects", { scaleY: 1 }, { duration: 0.5 });
           if (initAnimationRef.current) {
             props.setDisplayScrollBars(true);
           }

@@ -33,7 +33,6 @@ export default function HomePageAnimationWrapper<
         initAnimationRef.current = true;
         const enterAnimation = async () => {
           await animate(".home", { scaleY: 1 }, { duration: 0.5 });
-          // props.setDisplayScrollBars(true);
           if (initAnimationRef.current) {
             props.setDisplayScrollBars(true);
           }

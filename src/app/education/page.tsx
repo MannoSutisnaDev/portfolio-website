@@ -20,7 +20,7 @@ function Education() {
   ];
 
   return (
-    <motion.div className="base-page education">
+    <motion.div className="base-page education" initial={{ scaleY: 0 }}>
       <h1 className="heading">Education</h1>
       {contentBlocks.map((entry, index) => {
         return <ContentBlock key={`content-block-${index}`} {...entry} />;

@@ -9,7 +9,7 @@ import { useContext } from "react";
 
 function AboutMe() {
   return (
-    <motion.div className="home about-me">
+    <motion.div className="home about-me" initial={{ scaleY: 0 }}>
       <div className="personal">
         <h1 className="name">
           <span className="first-name">About Me</span>

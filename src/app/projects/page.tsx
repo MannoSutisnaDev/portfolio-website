@@ -17,7 +17,7 @@ function Projects() {
     content: "",
   };
   return (
-    <motion.div className="base-page projects">
+    <motion.div className="base-page projects" initial={{ scaleY: 0 }}>
       <h1 className="heading">Projects</h1>
       <ContentBlock {...contentBlock} />
     </motion.div>

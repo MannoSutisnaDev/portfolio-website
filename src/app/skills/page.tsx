@@ -22,7 +22,7 @@ import TooltipWrapper from "@/components/TooltipWrapper";
 
 function Skills() {
   return (
-    <motion.div className="base-page projects">
+    <motion.div className="base-page skills" initial={{ scaleY: 0 }}>
       <h1 className="heading">Skill</h1>
       <div className="skills-list">
         <h2>Programming languages & Tools</h2>
@@ -42,7 +42,7 @@ function Skills() {
           <TooltipWrapper text="React">
             <React />
           </TooltipWrapper>
-          <TooltipWrapper text="NextJS">
+          <TooltipWrapper text="Next (JS)">
             <NextJS />
           </TooltipWrapper>
           <TooltipWrapper text="Yii2">

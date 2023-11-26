@@ -33,7 +33,7 @@ export default function ExperiencePageAnimationWrapper<
       if (isPresent) {
         initAnimationRef.current = true;
         const enterAnimation = async () => {
-          // await animate(".skills", { x: 0 }, { duration: 0.5 });
+          await animate(".skills", { scaleY: 1 }, { duration: 0.5 });
           if (initAnimationRef.current) {
             props.setDisplayScrollBars(true);
           }

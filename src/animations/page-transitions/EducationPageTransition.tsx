@@ -32,7 +32,7 @@ export default function EducationPageTransition<
       if (isPresent) {
         initAnimationRef.current = true;
         const enterAnimation = async () => {
-          // await animate(".home", { scaleY: 1 }, { duration: 0.5 });
+          await animate(".education", { scaleY: 1 }, { duration: 0.5 });
           if (initAnimationRef.current) {
             props.setDisplayScrollBars(true);
           }
