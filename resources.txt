@@ -81,3 +81,7 @@ https://the-shubham.medium.com/how-to-clone-your-private-git-repository-and-depl
 
 How to connect to droplet with SSH via putty on windows:
 https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/putty/
+
+
+Change Vim color scheme on server:
+https://www.linode.com/docs/guides/vim-color-schemes/
