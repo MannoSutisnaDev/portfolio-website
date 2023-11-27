@@ -11,7 +11,7 @@ import { useContext } from "react";
 import { PageTransitionContext } from "@/components/PageTransitionWrapper";
 import { usePathname } from "next/navigation";
 
-export function HomePage() {
+function HomePage() {
   return (
     <motion.div className="base-page home" initial={{ scaleY: 0 }}>
       <div className="personal">

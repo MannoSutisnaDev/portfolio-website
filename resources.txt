@@ -75,3 +75,9 @@ https://www.svgrepo.com/
 
 Deploy Next JS to digital ocean
 https://www.youtube.com/watch?v=x6ci2iCckWc
+
+Pull from private git repo on droplet
+https://the-shubham.medium.com/how-to-clone-your-private-git-repository-and-deploy-on-digitalocean-your-node-js-application-with-217772f18c95
+
+How to connect to droplet with SSH via putty on windows:
+https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/putty/
