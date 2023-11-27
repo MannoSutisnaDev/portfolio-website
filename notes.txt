@@ -89,3 +89,5 @@ https://blog.logrocket.com/guide-to-css-animation-for-javascript-developers/
 
 Javascript use OFFSET to manipulate keyframe animation points:
 https://stackoverflow.com/questions/64271754/javascript-animate-key-frames-by-percentage
+
+Implement loader

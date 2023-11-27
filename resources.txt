@@ -71,3 +71,7 @@ https://www.youtube.com/watch?v=UHRTQCF7oKw
 SVGS
 https://fontawesome.com/search
 https://www.svgrepo.com/
+
+
+Deploy Next JS to digital ocean
+https://www.youtube.com/watch?v=x6ci2iCckWc

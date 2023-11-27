@@ -51,7 +51,7 @@ function Skills() {
           <TooltipWrapper text="SASS">
             <Sass />
           </TooltipWrapper>
-          <TooltipWrapper text="Cypress (JS)">
+          <TooltipWrapper text="Cypress (Frontend testing)">
             <Cypress />
           </TooltipWrapper>
           <TooltipWrapper text="Git">

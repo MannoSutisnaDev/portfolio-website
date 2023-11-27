@@ -16,14 +16,17 @@ function Experience() {
       after: "July 2019 - February 2021",
       sub: "AdCalls",
       content:
-        'Maintaining and building on the main product of AdCalls called "Call Tracking". From doing small tasks such as changing content and fixing small bugs to implementing new features into the already existing code base.',
+        "As a Junior developer I was maintaining and building on the main product of AdCalls which is 'Call Tracking'. Call Tracking links web behavior to offline phone conversations. It provides insights to as to which advertisement contributed to a telephone call (attribution). Activities that I performed as a Junior Developer were ranging from small tasks such as changing content and fixing small bugs to medium sized tasks such as implementing new features into the already existing code base.",
     },
     {
       main: "Medior Full Stack Web Developer",
       after: "February 2021 - Present",
       sub: "AdCalls",
-      content:
-        "Creating completely new features from scratch that helped to innovate the 'Call Tracking' product of AdCalls. Led the project to migrate to a new invoice system and phase out the old one. Realizing custom integrations for customers. Also alot of direct contact with customres to discuss their wishes and providng support",
+      content: `As a Medior developer I mostly worked on features that helped to innovate the 'Call Tracking' product of AdCalls. One of the features that I developed was a 'Debug mode' for the product. It allowed the customer to view individual pages of his/her website to find out which phone numbers were not replaced yet and it also provided functionality to fix those issues so that the next time a website visitor visits the page, the problem will not occur again.
+      
+      Also I was in Charge of implementing a new external invoicing system into the organization and phasing out the old one. There was a lot of back and forth with the consultant of the external party to figure out how to best migrate our data from the previous invoicing system to the new one and also on  how to best implement the workflows of the new invoicing system into our own backend. The project has since been finished.
+      
+      Finally I have been involved with a lot of technical consultancy and development of custom integrations for customers. Many times customers would want data from our system to be pushed to their systems in a specific way or via a specific workflow. Frequently I was present at the first meeting to advise on how the customer's wishes could be realized on a technical level. The next step would then be to  develop the custom integration or at least be closely involved with it to oversee its development. Afterwards I would support the customer if they encountered any issues or roadblocks.`,
     },
   ];
 
