@@ -97,7 +97,12 @@
     .personal {
       .name {
         font-size: 4.2rem;
-        line-height: 5.5rem;
+        line-height: 4.2rem;
+        display: flex;
+        flex-direction: column;
+        .separator {
+          display: none;
+        }
       }
       .info-wrapper {
         .info {

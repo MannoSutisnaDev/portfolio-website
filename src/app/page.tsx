@@ -17,7 +17,8 @@ function HomePage() {
       <div className="personal">
         <h1 className="name">
           <span className="first-name">Manno</span>
-          &nbsp;<span className="last-name">Sutisna</span>
+          <span className="separator">&nbsp;</span>
+          <span className="last-name">Sutisna</span>
         </h1>
         <div className="info-wrapper">
           <h2>
