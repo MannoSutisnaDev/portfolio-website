@@ -27,17 +27,17 @@ function HomePage() {
           </h2>
         </div>
       </div>
-      <p className="intro">
+      <p className="intro content-text">
         I am a Full Stack Web Developer with almost 5 years of professional
         experience. The programming languages that I have the most experience
         with are JavaScript and PHP.
       </p>
-      <p className="intro">
+      <p className="intro content-text">
         I really like to study web applications and implement individual
         features of it myself from scratch to really understand how it all
         works.
       </p>
-      <p className="intro">
+      <p className="intro content-text">
         Another things I really enjoy doing is studying a product, identifying
         its strengths and weaknesses and coming up with inventive ways to
         improve it maximally.

@@ -15,7 +15,7 @@ export default function ContentBlock({
         </div>
         <h3 className="sub">{sub}</h3>
       </div>
-      <p className="content">{content}</p>
+      <p className="content content-text">{content}</p>
     </div>
   );
 }

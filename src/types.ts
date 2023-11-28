@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export enum PageKeys {
   Home = "/",
   Experience = "/experience",
@@ -8,8 +10,8 @@ export enum PageKeys {
 }
 
 export interface ContentBlockType {
-  main: string;
-  after: string;
-  sub: string;
-  content: string;
+  main: string | ReactNode;
+  after: string | ReactNode;
+  sub: string | ReactNode;
+  content: string | ReactNode;
 }

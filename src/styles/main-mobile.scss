@@ -30,7 +30,6 @@
   }
 
   .navigation-wrapper {
-    // position: absolute;
     .navigation {
       box-sizing: border-box;
       width: 100%;
@@ -63,6 +62,81 @@
       }
     }
   }
+
+  .page-transition-wrapper {
+    position: relative;
+    .base-page {
+      padding: 40px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      &.experience {
+        display: inline;
+      }
+
+      .section {
+        .top {
+          .after {
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: right;
+            white-space: pre-wrap;
+            align-self: start;
+          }
+        }
+        .content {
+          font-size: 14px;
+          line-height: 22px;
+          white-space: pre-line;
+        }
+      }
+    }
+  }
+
+  .home {
+    .personal {
+      .name {
+        font-size: 4.2rem;
+        line-height: 5.5rem;
+      }
+      .info-wrapper {
+        .info {
+          font-size: 16px;
+        }
+      }
+    }
+    .intro {
+      color: #a19885;
+      margin-top: 30px;
+    }
+
+    .socials {
+      ul {
+        li {
+          width: 40px;
+          height: 40px;
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+  .no-br {
+    white-space: nowrap;
+  }
+  .section-span {
+    display: block;
+  }
+  .mobile-br {
+    display: block;
+  }
+}
+
+.content-text {
+  font-size: 14px;
+  line-height: 22px;
 }
 
 .hamburger-icon {
