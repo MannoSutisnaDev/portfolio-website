@@ -76,6 +76,14 @@ https://www.svgrepo.com/
 Deploy Next JS to digital ocean
 https://www.youtube.com/watch?v=x6ci2iCckWc
 
+
+Private NPM packages
+https://verdaccio.org/
+
+Git sparse checkouts for mono repo's
+
+
+
 Pull from private git repo on droplet
 https://the-shubham.medium.com/how-to-clone-your-private-git-repository-and-deploy-on-digitalocean-your-node-js-application-with-217772f18c95
 
@@ -85,3 +93,8 @@ https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/putty/
 
 Change Vim color scheme on server:
 https://www.linode.com/docs/guides/vim-color-schemes/
+
+
+Hostinger name servers:
+ns1.dns-parking.com
+ns2.dns-parking.com

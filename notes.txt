@@ -91,3 +91,15 @@ Javascript use OFFSET to manipulate keyframe animation points:
 https://stackoverflow.com/questions/64271754/javascript-animate-key-frames-by-percentage
 
 Implement loader
+
+
+
+
+Create detail page for the gaming platform on the projects page
+Create nice transition to go to detail page of Project
+  - to detail page
+  - away from detail page
+
+Implement reveal transitions for content of each page
+Tidy up page transitions
+

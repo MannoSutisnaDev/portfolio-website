@@ -17,8 +17,10 @@ import Sass from "@/svgs/Sass";
 import Cypress from "@/svgs/Cypress";
 import Git from "@/svgs/Git";
 import Docker from "@/svgs/Docker";
+import TypeScript from "@/svgs/TypeScript";
 
 import TooltipWrapper from "@/components/TooltipWrapper";
+import SQL from "@/svgs/SQL";
 
 function Skills() {
   return (
@@ -30,8 +32,14 @@ function Skills() {
           <TooltipWrapper text="JavaScript">
             <JavaScript />
           </TooltipWrapper>
+          <TooltipWrapper text="TypeScript">
+            <TypeScript />
+          </TooltipWrapper>
           <TooltipWrapper text="PHP">
             <PHP />
+          </TooltipWrapper>
+          <TooltipWrapper text="SQL">
+            <SQL />
           </TooltipWrapper>
           <TooltipWrapper text="HTML5">
             <Html5 />
