@@ -14,4 +14,6 @@ export interface ContentBlockType {
   after: string | ReactNode;
   sub: string | ReactNode;
   content: string | ReactNode;
+  afterClass?: string;
+  subClass?: string;
 }

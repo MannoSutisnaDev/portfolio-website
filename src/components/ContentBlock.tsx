@@ -5,15 +5,17 @@ export default function ContentBlock({
   after,
   sub,
   content,
+  subClass,
+  afterClass,
 }: ContentBlockType) {
   return (
     <div className="section">
       <div className="top">
         <div className="main">
           <h2 className="title">{main}</h2>
-          <p className="after">{after}</p>
+          <p className={`after ${afterClass ?? ""}`}>{after}</p>
         </div>
-        <h3 className="sub">{sub}</h3>
+        <h3 className={`sub ${subClass ?? ""}`}>{sub}</h3>
       </div>
       <p className="content content-text">{content}</p>
     </div>

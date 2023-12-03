@@ -275,6 +275,11 @@ body {
         .after {
           color: rgb(204, 117, 83);
           line-height: 22px;
+          &.link {
+            a {
+              color: rgb(204, 117, 83);
+            }
+          }
         }
       }
       .sub {

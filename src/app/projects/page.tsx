@@ -11,10 +11,14 @@ import { useContext } from "react";
 
 function Projects() {
   const contentBlock: ContentBlockType = {
-    main: "Coming soon...",
-    after: "",
+    main: "Multiplayer Games",
+    after: (
+      <a href="https://games.mannosutisnadev.com">games.mannosutisnadev.com</a>
+    ),
     sub: "",
-    content: "",
+    content:
+      "Play multiplayer games with friends. Multiple individual games can be played at the same time via a lobby system. Currently Checkers is available to play but in the future many more games will be added to the website.",
+    afterClass: "link",
   };
   return (
     <motion.div className="base-page projects" initial={{ scaleY: 0 }}>
